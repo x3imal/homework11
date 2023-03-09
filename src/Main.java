@@ -55,7 +55,7 @@ public class Main {
         enterDistance(scanner.nextInt());
     }
 
-    public static void enterDistance(int deliveryDistance){
+    public static int enterDistance(int deliveryDistance){
 
         int deliveryTime = 1;
         if (deliveryDistance <= 20) {
@@ -67,6 +67,7 @@ public class Main {
         } else {
             System.out.println("Доставки нет");
         }
+        return deliveryTime;
 
     }
 }
