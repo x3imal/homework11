@@ -1,8 +1,10 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
         task1();
+        task2();
 
 
     }
@@ -23,7 +25,23 @@ public class Main {
     }
 
     public static void task2(){
+        System.out.println("Задача 2");
+        int ios = 1;
+        int currentYear = LocalDate.now().getYear();
+        enterOsOptionAndYears(ios, currentYear);
 
-
+    }
+    public static void enterOsOptionAndYears(int clientOs, int clientDeviceYear) {
+        //метод вычисления версии OS
+        if (clientOs == 0 && clientDeviceYear >= 2015) {
+            System.out.println("Скачайте полную версию с AppleStore");
+        } else if (clientOs == 0 && clientDeviceYear < 2015) {
+            System.out.println("Скачайте облегченную версию с AppleStore");
+        } else if (clientOs == 1 && clientDeviceYear >= 2015) {
+            System.out.println("Скачайте полную версию с GoogleMarket");
+        } else if (clientOs == 1 && clientDeviceYear < 2015) {
+            System.out.println("Скачайте облегченную версию с GoogleMarket");
+        }
+        System.out.println();
     }
 }
