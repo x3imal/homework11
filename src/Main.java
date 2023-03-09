@@ -2,17 +2,18 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args){
         task1();
         task2();
-
-
+        task3();
     }
 
+
+
     public static void task1(){
-        System.out.println("Задача 1");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите год ");
+        System.out.println("Введите год: ");
         enterYears(scanner.nextInt());
     }
     public static void enterYears (int year){
@@ -22,6 +23,7 @@ public class Main {
         } else {
             System.out.println(+year+ " не високосный год");
         }
+        System.out.println();
     }
 
     public static void task2(){
@@ -43,5 +45,28 @@ public class Main {
             System.out.println("Скачайте облегченную версию с GoogleMarket");
         }
         System.out.println();
+    }
+
+
+    public static void task3(){
+        System.out.println("Задача 3");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите дистанцию до Вас: ");
+        enterDistance(scanner.nextInt());
+    }
+
+    public static void enterDistance(int deliveryDistance){
+
+        int deliveryTime = 1;
+        if (deliveryDistance <= 20) {
+            System.out.println("Потребуется дней: " + deliveryTime);
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Потребуется дней: " + (deliveryTime + 1));
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            System.out.println("Потребуется дней: " + (deliveryTime + 2));
+        } else {
+            System.out.println("Доставки нет");
+        }
+
     }
 }
