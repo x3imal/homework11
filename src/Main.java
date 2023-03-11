@@ -54,24 +54,23 @@ public class Main {
         System.out.println("Задача 3");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите дистанцию до Вас: ");
-        //calculateDistance(scanner.nextInt());
-        int deliveryDays = calculateDistance(scanner.nextInt());
-
-
+        int deliveryDays1 = calculateDistance(scanner.nextInt());
+        System.out.println("Потребуется дней " + deliveryDays1);
     }
 
     public static int calculateDistance(int deliveryDistance) {
 
         int deliveryDays = 1;
         if (deliveryDistance <= 20) {
-            System.out.println("Потребуется дней: " + deliveryDays);
         } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            System.out.println("Потребуется дней: " + (deliveryDays + 1));
+            deliveryDays++;
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            System.out.println("Потребуется дней: " + (deliveryDays + 2));
+            deliveryDays = deliveryDays + 2;
         } else {
             System.out.println("Доставки нет");
+
         }
         return deliveryDays;
+
     }
 }
