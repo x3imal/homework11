@@ -55,7 +55,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите дистанцию до Вас: ");
         int deliveryDays1 = calculateDistance(scanner.nextInt());
-        System.out.println("Потребуется дней " + deliveryDays1);
+        if(deliveryDays1 > 0) {
+            System.out.println("Потребуется дней " + deliveryDays1);
+        } else {
+            System.out.println("Нет доставки");
+        }
     }
 
     public static int calculateDistance(int deliveryDistance) {
@@ -67,7 +71,7 @@ public class Main {
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
             deliveryDays = deliveryDays + 2;
         } else {
-            System.out.println("Доставки нет");
+            deliveryDays = -1;
 
         }
         return deliveryDays;
